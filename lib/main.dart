@@ -22,6 +22,12 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => NewServices() ),
       ],
+
+      // AnnotatedRegion<SystemUiOverlayStyle> puede cambiar las propiedades del la barra de notificaciones.
+      // con statusBarColor: Colors(...) podras darle color a la barra de notificaciones.
+      // link de la documentacion para cambiar las propiedades 
+      // https://api.flutter.dev/flutter/services/SystemUiOverlayStyle-class.html
+      // 
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarColor: Color.fromRGBO(255, 255, 255, 0),
